@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font: 2px;
+    font-family: 'PT Sans', sans-serif;
+    background: #f0f651;
+    color: #fff;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+
+#topheader {
+    background: rgb(151, 99, 220);
+    padding: 100px;
+    
+}
+
+#kbtext {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#textfortop {
+    font-size: 40px;
+}
+
+#toparrow {
+    font-size: 70px;
+}
+
+#tbtimeline {
+    
+}
