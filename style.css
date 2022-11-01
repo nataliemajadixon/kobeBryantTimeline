@@ -4,19 +4,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+* ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 body{
     font: 2px;
     font-family: 'PT Sans', sans-serif;
     background: #f0f651;
-    color: #fff;
+    color: black;
     overflow-x: hidden;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 #topheader {
     background: rgb(151, 99, 220);
-    padding: 100px;
+    padding: 100px 0 ;
     
 }
 
@@ -24,6 +35,7 @@ body{
     text-align: center;
     width: 90%;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 #textfortop {
@@ -34,6 +46,192 @@ body{
     font-size: 70px;
 }
 
-#tbtimeline {
-    
+.kbtimeline ul{
+    background: #f0f651;
+    padding: 50px;
 }
+
+.kbtimeline ul li{
+    position: relative;
+    width: 6px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: white;
+}
+
+.kbtimeline ul li:after{
+    width: 30px;
+    height: 30px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+}
+
+.kbtimeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: blueviolet;
+  }
+
+  .kbtimeline ul li div::before {
+    content: "";
+    border-style: solid;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 7px;
+  }
+
+  .kbtimeline ul li:nth-child(odd) div {
+    left: 45px;
+  }
+
+  .kbtimeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px, 16px, 8px 0;
+    border-color: transparent blueviolet transparent transparent;
+  }
+
+  .kbtimeline ul li:nth-child(even) div {
+    left: -439px;
+  }
+
+  .kbtimeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0px 8px 16px;
+    border-color: transparent transparent transparent blueviolet;
+  }
+
+  .year {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 20px;
+  }
+
+  .kbtimeline ul li::after {
+    transition: background 0.5s ease-in-out;
+  }
+  .kbtimeline ul li.in-view::after {
+    background: white;
+  }
+
+  .kbtimeline ul li div {
+    visibility: hidden;
+  opacity: 0;
+  transition: all 1.2s ease-in-out;
+  }
+
+  .kbtimeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+  }
+
+  .kbtimeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+  }
+
+  .kbtimeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+
+  @media screen and (max-width: 900px) {
+    .kbtimeline ul li div {
+      width: 250px;
+    }
+    .kbtimeline ul li:nth-child(even) div {
+      left: -289px;
+      
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .kbtimeline ul li {
+      margin-left: 20px;
+    }
+    .kbtimeline ul li div {
+      width: calc(100vw - 91px);
+    }
+    .kbtimeline ul li:nth-child(even) div {
+      left: 45px;
+    }
+    .kbtimeline ul li:nth-child(even) div::before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent blueviolet transparent transparent;
+    }
+  }
+
+
+
+
+
+
+  .kbtimeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+  }
+  
+  .kbtimeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  .kbtimeline-rhombus ul li div::before {
+    bottom: 12px;
+  }
+  
+  .kbtimeline-star ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+  
+  .kbtimeline-heptagon ul li::after {
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+  
+  .kbtimeline-infinite ul li::after {
+    animation: scaleAnimation 3s infinite;
+  }
+  
+  @keyframes scaleAnimation {
+    0% {
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      transform: translateX(-50%) scale(1.25);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  
