@@ -16,6 +16,7 @@
 }
 
 
+
 body{
     font: 2px;
     font-family: 'PT Sans', sans-serif;
@@ -66,7 +67,14 @@ body{
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
+
+.navbar {
+  padding-left: 20px;
+}
+
 
 #textfortop {
     font-size: 40px;
@@ -74,10 +82,11 @@ body{
 
 #toparrow {
     font-size: 70px;
+    text-align: center;
 }
 
 .kbtimeline ul{
-    background: #f0f651;
+    background: #FDBA21;
     padding: 50px;
 }
 
