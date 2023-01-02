@@ -19,7 +19,7 @@
 body{
     font: 2px;
     font-family: 'PT Sans', sans-serif;
-    background: #f0f651;
+    background: #FDBA21 ;
     color: black;
     overflow-x: hidden;
     padding-bottom: 50px;
@@ -29,6 +29,36 @@ body{
     background: rgb(151, 99, 220);
     padding: 100px 0 ;
     
+}
+
+
+.slideshow{
+  max-width: 2000px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  transform: translate3d(0, 0, 0);
+  padding:0;
+ 
+}
+
+.slideshow > div {
+  background: url(kobeslide.png);
+  width: 6006px;
+  height: 122px;
+  
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+}
+
+.slideshow .slide-baby {
+  animation: moveSlideshow 70s linear infinite;
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-66.6666%);
+  }
 }
 
 #kbtext {
@@ -78,7 +108,7 @@ body{
     bottom: 0;
     width: 400px;
     padding: 15px;
-    background: blueviolet;
+    background: #552084;
   }
 
   .kbtimeline ul li div::before {
@@ -97,7 +127,7 @@ body{
   .kbtimeline ul li:nth-child(odd) div::before {
     left: -15px;
     border-width: 8px, 16px, 8px 0;
-    border-color: transparent blueviolet transparent transparent;
+    border-color: transparent #552084 transparent transparent;
   }
 
   .kbtimeline ul li:nth-child(even) div {
@@ -107,7 +137,7 @@ body{
   .kbtimeline ul li:nth-child(even) div::before {
     right: -15px;
     border-width: 8px 0px 8px 16px;
-    border-color: transparent transparent transparent blueviolet;
+    border-color: transparent transparent transparent #552084;
   }
 
   .year {
@@ -168,7 +198,7 @@ body{
     .kbtimeline ul li:nth-child(even) div::before {
       left: -15px;
       border-width: 8px 16px 8px 0;
-      border-color: transparent blueviolet transparent transparent;
+      border-color: transparent #552084 transparent transparent;
     }
   }
 
