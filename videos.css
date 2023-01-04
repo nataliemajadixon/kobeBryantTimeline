@@ -10,3 +10,16 @@ body{
 .navbar{
     background-color:  #FDBA21;
 }
+
+.navlinks {
+    background-color: rgb(151, 99, 220);
+    color: #FFFFFF;
+    padding: 14px 25px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+  }
+   .navlinks:hover {
+    background-color: #FFFFFF;
+    color: black;
+   }
